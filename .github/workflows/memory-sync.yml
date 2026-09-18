@@ -10,10 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Commit local memory changes
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Sync memory changes
         run: |
-          git config user.email "hugo@users.noreply.github.com"
-          git config user.name "Hugo Bot"
-          git add memory
-          git diff --cached --quiet || git commit -m "Sync local memory"
-          git push
+          HUGO_MEMORY_AUTO_PUSH=true node scripts/memory-git-sync.js

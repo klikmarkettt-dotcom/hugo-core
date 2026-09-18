@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+.hugo/
+node_modules/
+*.log
+memory/.sync-lock

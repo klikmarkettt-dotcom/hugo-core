@@ -57,3 +57,14 @@ that endpoint, arbitrary PC control is rejected.
 
 Memory sync covers facts, conversations, learned skills, graph indexes, and
 personal state files through `syncAllMemory`; GitHub is the shared durable store.
+
+## Start on the PC
+
+From the repository root, run `npm start`. Hugo loads reminders from `memory/todos.json`
+and `memory/habits.json`, starts the 15-minute memory watcher, and starts the PC
+gateway only when `HUGO_DEVICE_TOKEN` is present. Use `npm run start:once` for a
+safe health/sync check. Set `HUGO_MEMORY_AUTO_PUSH=false` to commit locally without
+pushing. Node.js 20+ is required; no npm dependencies are required for the core.
+Copy the safe defaults from `.env.example` into your shell environment; keep real
+tokens outside the repository. The reminder loop checks due todos every minute
+while the PC hub is running.

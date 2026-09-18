@@ -1,0 +1,14 @@
+{
+  "name": "hugo-core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hugo/JARVIS data and runtime layer",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node scripts/hugo-start.js",
+    "start:once": "node scripts/hugo-start.js --once --no-gateway",
+    "device:gateway": "node scripts/device-gateway.js",
+    "memory:sync": "node scripts/memory-git-sync.js",
+    "doctor": "node scripts/hugo-start.js --once --no-gateway"
+  }
+}
