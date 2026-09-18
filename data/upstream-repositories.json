@@ -1,0 +1,46 @@
+{
+  "version": "1.0.0",
+  "policy": "reference-and-adapter",
+  "repositories": [
+    {
+      "id": "playwright",
+      "url": "https://github.com/microsoft/playwright",
+      "license": "Apache-2.0",
+      "role": "browser-engine",
+      "integration": "optional-node-package",
+      "capabilities": ["chromium", "firefox", "webkit", "screenshots", "click", "type"]
+    },
+    {
+      "id": "mcp-typescript-sdk",
+      "url": "https://github.com/modelcontextprotocol/typescript-sdk",
+      "license": "upstream-license",
+      "role": "mcp-client-server",
+      "integration": "optional-node-package",
+      "capabilities": ["tools", "resources", "prompts", "stdio", "streamable-http"]
+    },
+    {
+      "id": "mcp-servers",
+      "url": "https://github.com/modelcontextprotocol/servers",
+      "license": "upstream-license",
+      "role": "mcp-server-catalog",
+      "integration": "external-process",
+      "capabilities": ["filesystem", "git", "fetch", "memory", "time"]
+    },
+    {
+      "id": "langgraph",
+      "url": "https://github.com/langchain-ai/langgraph",
+      "license": "MIT",
+      "role": "durable-agent-orchestration",
+      "integration": "external-service-or-python-worker",
+      "capabilities": ["checkpointing", "interrupts", "retries", "human-in-the-loop"]
+    },
+    {
+      "id": "opentelemetry-js",
+      "url": "https://github.com/open-telemetry/opentelemetry-js",
+      "license": "Apache-2.0",
+      "role": "observability",
+      "integration": "optional-node-package",
+      "capabilities": ["traces", "metrics", "logs"]
+    }
+  ]
+}

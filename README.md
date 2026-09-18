@@ -33,3 +33,8 @@ endpoint environment variable for a service you have actually deployed; run
 `scripts/integration-health.js` from a small Node wrapper to inspect reachability.
 The registry records capability and provenance, while the core remains usable
 without any external service.
+
+Additional optional upstreams are recorded in `data/upstream-repositories.json`:
+Playwright, the MCP TypeScript SDK and server catalog, LangGraph, and
+OpenTelemetry. `scripts/playwright-adapter.js` activates only when the optional
+`playwright` package is installed; the default HTTP browser path remains intact.

@@ -10,6 +10,11 @@
     { "id": "open-jarvis", "category": "cognition", "source": "https://github.com/open-jarvis/OpenJarvis", "transport": "openai-compatible", "env": "OPEN_JARVIS_ENDPOINT", "capabilities": ["local-inference", "skills", "learning"] },
     { "id": "openclawminicrm", "category": "business", "source": "https://github.com/smlsoft/openclawminicrm", "transport": "http", "env": "CRM_ENDPOINT", "capabilities": ["crm", "sales", "support"] },
     { "id": "open-ai-social-agent", "category": "business", "source": "https://github.com/SamurAIGPT/open-ai-social-agent", "transport": "http", "env": "SOCIAL_AGENT_ENDPOINT", "capabilities": ["publishing", "listening", "trends"] },
-    { "id": "open-ai-marketing-agent", "category": "business", "source": "https://github.com/SamurAIGPT/ai-marketing-agent", "transport": "http", "env": "MARKETING_AGENT_ENDPOINT", "capabilities": ["campaigns", "analytics", "multi-channel"] }
+    { "id": "open-ai-marketing-agent", "category": "business", "source": "https://github.com/SamurAIGPT/ai-marketing-agent", "transport": "http", "env": "MARKETING_AGENT_ENDPOINT", "capabilities": ["campaigns", "analytics", "multi-channel"] },
+    { "id": "playwright", "category": "vision", "source": "https://github.com/microsoft/playwright", "transport": "local-package", "package": "playwright", "capabilities": ["chromium", "firefox", "webkit", "screenshots", "click", "type"] },
+    { "id": "mcp-typescript-sdk", "category": "cognition", "source": "https://github.com/modelcontextprotocol/typescript-sdk", "transport": "local-package", "package": "@modelcontextprotocol/sdk", "capabilities": ["tools", "resources", "prompts"] },
+    { "id": "mcp-servers", "category": "tools", "source": "https://github.com/modelcontextprotocol/servers", "transport": "external-process", "capabilities": ["filesystem", "git", "fetch", "memory", "time"] },
+    { "id": "langgraph", "category": "cognition", "source": "https://github.com/langchain-ai/langgraph", "transport": "external-service", "capabilities": ["checkpointing", "interrupts", "retries", "human-in-the-loop"] },
+    { "id": "opentelemetry-js", "category": "system", "source": "https://github.com/open-telemetry/opentelemetry-js", "transport": "local-package", "package": "@opentelemetry/api", "capabilities": ["traces", "metrics", "logs"] }
   ]
 }
