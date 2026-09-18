@@ -1,5 +1,24 @@
 # Hugo Core
 
+## GitHub and app connection
+
+Primary repository: https://github.com/klikmarkettt-dotcom/hugo-core
+Remote interface: [hugo-app](https://klikmarkettt-dotcom.github.io/hugo-app/)
+
+This project is designed to work as a connected personal AI hub:
+
+- The GitHub repository is the durable source of truth for the project, memory,
+  configs, and runtime state.
+- The frontend app is a lightweight remote launcher that opens the Hugo experience
+  from a browser.
+- The PC where this repository runs stays as the primary hub.
+- The laptop, tablet, or phone connects to that PC through a private tunnel such as
+  Tailscale, ngrok, or a secure reverse tunnel, not through a public open port.
+
+When the PC hub is running and the tunnel is active, opening the app link gives you
+access to the same living system from home, work, or a phone. The endpoint is
+private, authenticated, and aligned with the hub architecture in this repository.
+
 ## Hugo App
 
 Open the remote interface at [hugo-app](https://klikmarkettt-dotcom.github.io/hugo-app/).
@@ -8,6 +27,42 @@ Tailscale or equivalent tunnel using `scripts/device-client.js`.
 
 Backend/data layer for the Hugo/JARVIS assistant. Runtime modules use Node.js 20
 and persist durable state as append-only JSONL.
+
+## One-click startup flow
+
+From the PC that hosts the repo:
+
+1. Open this repository on the machine you want to act as the hub.
+2. Run `npm run doctor` to verify the system is healthy.
+3. Run `npm start` to launch the hub.
+4. Keep the machine online and expose the gateway only through a private tunnel.
+5. Open the web app link from a laptop or phone and connect to the living hub.
+
+The system keeps memory, reminders, habits, tasks, and Git-backed learning state in
+`memory/` and `data/`, while the private gateway exposes the relevant services only
+when the token and tunnel are correctly configured.
+
+## JARVIS vision
+
+This is not just a static catalog. The project is intended to behave as a personal
+multi-agent operating layer with:
+
+- vision and browser automation
+- memory and recall
+- personal tasks, habits, and reminders
+- Git-backed durable memory sync
+- business and automation flows
+- connected device orchestration
+- optional upstream integrations for free/open tools and adapters
+
+The app is designed to behave like a private AI operating system for the user: eyes,
+ears, memory, reasoning, tasks, and remote reachability, all centered on the PC hub.
+
+## Runtime
+
+No package install is required. Browser screenshots and social publishing require
+an explicitly configured backend endpoint and token. Public read-only browsing uses
+the built-in Node.js `fetch` implementation.
 
 ## Structure
 
