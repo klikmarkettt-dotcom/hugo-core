@@ -1,12 +1,15 @@
 {
   "categories": {
     "image": ["generate", "logo", "icon", "upscale", "style-transfer", "qr"],
-    "crypto": ["price", "top", "trending", "chart", "converter", "gas"],
+    "crypto": ["price", "top", "trending", "chart", "converter", "gas", "fear-greed", "defi-tvl", "stablecoin-rates", "btc-halving", "crypto-news", "dominance", "markets", "token-info", "portfolio", "onchain"],
     "news": ["hackernews", "rss", "mkdnews", "crypto-news", "tech-news"],
-    "web": ["wikipedia", "define", "weather", "translate", "search"],
+    "web": ["wikipedia", "define", "weather", "translate", "search", "whois", "dns", "ssl", "ping", "archive", "page-speed", "headers", "robots", "sitemap", "ip-info", "url", "link-check"],
+    "media": ["youtube-search", "spotify-search", "reddit-hot", "movie-search", "tvshow-search", "image-info", "audio-metadata", "rss-reader", "podcast-search"],
+    "productivity": ["todo-list", "notes", "habit-tracker", "pomodoro", "word-count", "reading-time", "calculator", "stopwatch", "timezone", "json-format", "csv-tools"],
+    "text": ["summarize", "rewrite", "email", "tweet", "translate", "spell-check", "readability", "case-converter", "keyword-extractor", "text-extract", "slug-generator", "regex-tester", "markdown-tools"],
     "github": ["user", "repos", "repo", "prs", "search", "clone", "trending"],
-    "text": ["summarize", "rewrite", "email", "tweet", "translate"],
     "util": ["password", "uuid", "qr", "time", "ip"]
   },
-  "total": 43
+  "total": 93,
+  "new_tools": 50
 }

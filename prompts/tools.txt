@@ -2,12 +2,39 @@
 - image:generate — Направи слика на [опис]
 - crypto:price — Цена на [BTC|ETH|SOL]
 - crypto:top — Топ 10 крипто
+- crypto:chart — График/историја цена на [coin]
+- crypto:converter — Конвертирај [количина] [coin] во [валута]
+- crypto:gas-tracker — Ethereum gas
+- crypto:fear-greed — Fear & Greed индекс
+- crypto:defi-tvl — DeFi TVL
+- crypto:stablecoin-rates — Stablecoin статистика
+- crypto:btc-halving — Следен Bitcoin halving
+- crypto:crypto-news — Крипто вести
 - news:hackernews — Хакер њуз
 - news:mkdnews — Вести Македонија
 - web:wikipedia — Википедија за [тема]
 - web:weather — Време [град]
-- gh:user — github.com/[user]
-- gh:prs — Моите PRs
+- web:whois-lookup — WHOIS за [домен]
+- web:dns-lookup — DNS за [домен]
+- web:ssl-check — SSL за [домен]
+- web:ping-url — Провери URL
+- web:web-archive — Wayback snapshot
+- web:page-speed — PageSpeed за URL
+- media:youtube-search — Пребарај YouTube
+- media:spotify-search — Пребарај Spotify (со keyless fallback)
+- media:reddit-hot — Hot posts од subreddit
+- media:movie-search — Пребарај филм (со fallback)
+- media:tvshow-search — Пребарај серија
+- productivity:todo-list — Локална листа на задачи
+- productivity:notes — Локални белешки
+- productivity:habit-tracker — Локален habit tracker
+- productivity:pomodoro — Pomodoro timer
+- productivity:word-count — Број зборови
+- productivity:reading-time — Време за читање
+- text:summarize — Сумирај текст
+- text:translate — Преведи текст
+- text:spell-check — Провери правопис
+- text:readability — Измери читливост
 - util:password — Лозинка
 - util:uuid — UUID
 - util:qr — QR [текст]
