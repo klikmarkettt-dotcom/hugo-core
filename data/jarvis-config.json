@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "name": "JARVIS ULTRA-AGENT",
+  "modules": {
+    "cognition": {
+      "planning": true,
+      "replanning": true,
+      "reasoning_loop": "plan→execute→observe→replan",
+      "sub_task_decomposition": true,
+      "self_reflection": true,
+      "providers": [
+        "groq-free",
+        "pollinations",
+        "nvidia-nim"
+      ]
+    },
+    "memory": {
+      "long_term": true,
+      "knowledge_graph": true,
+      "temporal": true,
+      "backends": [
+        "cognee",
+        "memex",
+        "gbrain"
+      ],
+      "persistence": "github+local",
+      "recall_strategy": "hybrid(semantic+keyword+temporal)"
+    },
+    "vision": {
+      "browser_vision": true,
+      "screen_reading": true,
+      "grounding": true,
+      "backends": [
+        "browser-use",
+        "local-browser-use",
+        "glazyr-viz",
+        "molmoweb"
+      ],
+      "sub_16ms_latency": true,
+      "local_first": true
+    },
+    "business": {
+      "social_media": true,
+      "crm": true,
+      "campaigns": true,
+      "backends": [
+        "open-ai-social-agent",
+        "openclawminicrm",
+        "ai-marketing-agent"
+      ],
+      "platforms": [
+        "facebook",
+        "instagram",
+        "tiktok",
+        "x",
+        "youtube",
+        "reddit",
+        "linkedin"
+      ],
+      "autonomous_mode": true
+    }
+  },
+  "environment": {
+    "platform": "termux-android",
+    "interface": "web",
+    "voice": true,
+    "multi_language": true
+  },
+  "free_apis": {
+    "groq": "https://console.groq.com (free tier)",
+    "pollinations": "https://text.pollinations.ai (no key)",
+    "nvidia_nim": "https://build.nvidia.com (free credits)",
+    "gemini": "https://aistudio.google.com (free tier)"
+  }
+}

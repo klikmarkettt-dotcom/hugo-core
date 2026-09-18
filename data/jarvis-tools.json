@@ -1,0 +1,285 @@
+{
+  "version": "1.0",
+  "tools": {
+    "plan": {
+      "icon": "🧠",
+      "category": "cognition",
+      "desc": "Разложи задача на под-задачи",
+      "keywords_mk": [
+        "планирај",
+        "разложи",
+        "план"
+      ],
+      "keywords_en": [
+        "plan",
+        "decompose",
+        "break down"
+      ]
+    },
+    "replan": {
+      "icon": "🔄",
+      "category": "cognition",
+      "desc": "Преиспитај план ако нешто не работи",
+      "keywords_mk": [
+        "преиспитај",
+        "replan",
+        "не работи"
+      ],
+      "keywords_en": [
+        "replan",
+        "retry",
+        "adjust"
+      ]
+    },
+    "reason": {
+      "icon": "💭",
+      "category": "cognition",
+      "desc": "Размисли за комплексен проблем",
+      "keywords_mk": [
+        "размисли",
+        "анализирај",
+        "reason"
+      ],
+      "keywords_en": [
+        "reason",
+        "analyze",
+        "think"
+      ]
+    },
+    "reflect": {
+      "icon": "🪞",
+      "category": "cognition",
+      "desc": "Анализирај што научи",
+      "keywords_mk": [
+        "рефлектирај",
+        "што научи",
+        "анализа"
+      ],
+      "keywords_en": [
+        "reflect",
+        "learn",
+        "review"
+      ]
+    },
+    "remember": {
+      "icon": "📌",
+      "category": "memory",
+      "desc": "Зачувај факт во долгорочна меморија",
+      "keywords_mk": [
+        "запамети",
+        "помни",
+        "запиши"
+      ],
+      "keywords_en": [
+        "remember",
+        "save",
+        "store"
+      ]
+    },
+    "recall": {
+      "icon": "🔍",
+      "category": "memory",
+      "desc": "Пребарај во меморија",
+      "keywords_mk": [
+        "сети се",
+        "што знаеш",
+        "пребарај меморија"
+      ],
+      "keywords_en": [
+        "recall",
+        "remember",
+        "search memory"
+      ]
+    },
+    "learn": {
+      "icon": "🎓",
+      "category": "memory",
+      "desc": "Научи нов skill од GitHub или URL",
+      "keywords_mk": [
+        "учи",
+        "научи",
+        "изучи"
+      ],
+      "keywords_en": [
+        "learn",
+        "study",
+        "acquire"
+      ]
+    },
+    "browse": {
+      "icon": "🌐",
+      "category": "vision",
+      "desc": "Отвори URL во browser",
+      "keywords_mk": [
+        "отвори",
+        "browse",
+        "посети"
+      ],
+      "keywords_en": [
+        "browse",
+        "open",
+        "visit"
+      ]
+    },
+    "see": {
+      "icon": "👁",
+      "category": "vision",
+      "desc": "Види што има на страница",
+      "keywords_mk": [
+        "види",
+        "гледај",
+        "што има"
+      ],
+      "keywords_en": [
+        "see",
+        "look",
+        "read page"
+      ]
+    },
+    "click": {
+      "icon": "🖱",
+      "category": "vision",
+      "desc": "Кликни на елемент",
+      "keywords_mk": [
+        "кликни",
+        "притисни"
+      ],
+      "keywords_en": [
+        "click",
+        "press"
+      ]
+    },
+    "type": {
+      "icon": "⌨️",
+      "category": "vision",
+      "desc": "Пишувај во поле",
+      "keywords_mk": [
+        "пишувај",
+        "внеси"
+      ],
+      "keywords_en": [
+        "type",
+        "write",
+        "enter"
+      ]
+    },
+    "screenshot": {
+      "icon": "📸",
+      "category": "vision",
+      "desc": "Зачувај слика од екран",
+      "keywords_mk": [
+        "скриншот",
+        "фати екран"
+      ],
+      "keywords_en": [
+        "screenshot",
+        "capture"
+      ]
+    },
+    "create_campaign": {
+      "icon": "📢",
+      "category": "business",
+      "desc": "Направи рекламна кампања",
+      "keywords_mk": [
+        "кампања",
+        "реклама",
+        "маркетинг"
+      ],
+      "keywords_en": [
+        "campaign",
+        "ads",
+        "marketing"
+      ]
+    },
+    "post_social": {
+      "icon": "📱",
+      "category": "business",
+      "desc": "Објави на социјални мрежи",
+      "keywords_mk": [
+        "објави",
+        "postiraj",
+        "социјални"
+      ],
+      "keywords_en": [
+        "post",
+        "social",
+        "publish"
+      ]
+    },
+    "check_crm": {
+      "icon": "📊",
+      "category": "business",
+      "desc": "Провери CRM",
+      "keywords_mk": [
+        "crm",
+        "клиенти",
+        "продажби"
+      ],
+      "keywords_en": [
+        "crm",
+        "customers",
+        "sales"
+      ]
+    },
+    "report": {
+      "icon": "📈",
+      "category": "business",
+      "desc": "Генерирај извештај",
+      "keywords_mk": [
+        "извештај",
+        "report",
+        "статистика"
+      ],
+      "keywords_en": [
+        "report",
+        "analytics",
+        "stats"
+      ]
+    },
+    "time": {
+      "icon": "🕐",
+      "category": "utility",
+      "desc": "Тековно време",
+      "keywords_mk": [
+        "часот",
+        "време",
+        "датум"
+      ],
+      "keywords_en": [
+        "time",
+        "date",
+        "clock"
+      ]
+    },
+    "search_web": {
+      "icon": "🔎",
+      "category": "utility",
+      "desc": "Пребарај на интернет",
+      "keywords_mk": [
+        "пребарај",
+        "најди",
+        "search"
+      ],
+      "keywords_en": [
+        "search",
+        "find",
+        "google"
+      ]
+    },
+    "generate_image": {
+      "icon": "🎨",
+      "category": "utility",
+      "desc": "Генерирај слика",
+      "keywords_mk": [
+        "слика",
+        "нацртај",
+        "генерирај"
+      ],
+      "keywords_en": [
+        "image",
+        "draw",
+        "generate"
+      ]
+    }
+  }
+}
