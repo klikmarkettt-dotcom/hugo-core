@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "browser": { "engine": "playwright", "headless": true, "timeout_ms": 30000 },
+  "screenshot": { "format": "png", "full_page": true },
+  "ocr": { "provider": "tesseract", "language": "eng+mkd" },
+  "security": { "allow_hosts": [], "deny_private_networks": true }
+}

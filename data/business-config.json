@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "default_currency": "EUR",
+  "analytics": { "timezone": "Europe/Skopje", "retention_days": 365 },
+  "publishing": { "require_approval": true, "max_retries": 2 },
+  "crm": { "store": "memory/crm.jsonl", "dedupe_key": "email" }
+}

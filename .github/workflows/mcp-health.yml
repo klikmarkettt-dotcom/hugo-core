@@ -1,0 +1,15 @@
+name: Hugo MCP Health
+on:
+  schedule:
+    - cron: '47 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node --check scripts/mcp-client.js && node --check scripts/mcp-registry.js && jq empty data/mcp-config.json

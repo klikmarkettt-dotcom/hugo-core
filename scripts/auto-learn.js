@@ -1,4 +1,5 @@
 // Hugo Auto-Learn script
+const fs = require('node:fs/promises');
 const SOURCES = [
   'e2b-dev/awesome-ai-agents',
   'punkpeye/awesome-mcp-servers',
@@ -33,11 +34,14 @@ async function learnFromRepo(repo) {
 
 async function autoLearn() {
   let total = 0;
+  const learned = [];
   for (const repo of SOURCES) {
     const skills = await learnFromRepo(repo);
     total += skills.length;
+    learned.push(...skills.map((skill) => ({ ...skill, learned_at: new Date().toISOString() })));
     console.log(`Learned ${skills.length} from ${repo}`);
   }
+  if (learned.length) await fs.appendFile('memory/learned.jsonl', `${learned.map((item) => JSON.stringify(item)).join('\n')}\n`, 'utf8');
   console.log(`Total: ${total}`);
   return total;
 }

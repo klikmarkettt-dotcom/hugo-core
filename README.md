@@ -1,18 +1,22 @@
-# 🔒 Hugo Core (Private)
+# Hugo Core
 
-Data files for Hugo AI app. The public HTML app fetches these files via GitHub API with user token.
+Backend/data layer for the Hugo/JARVIS assistant. Runtime modules use Node.js 20
+and persist durable state as append-only JSONL.
 
 ## Structure
-- `data/` — skills, translate dict, tools, agents, cant
-- `prompts/` — system prompts
-- `memory/` — persisted memory (facts, learned, history)
-- `tools/` — recipes, configs
 
-## Public app
-🌐 https://klikmarkettt-dotcom.github.io/hugo-app/
+- `data/` contains schemas, catalogues, and module configuration.
+- `prompts/` contains Macedonian system prompts.
+- `memory/` contains facts, history, indexes, and CRM events.
+- `scripts/` contains cognition, memory, vision, business, and GitHub automation.
 
-## How it works
-1. User opens app
-2. Enters GitHub token (gist + repo scope)
-3. App reads all files via GitHub API
-4. App writes memory.json back on changes
+## Runtime
+
+No package install is required. Browser screenshots and social publishing require
+an explicitly configured backend endpoint and token. Public read-only browsing uses
+the built-in Node.js `fetch` implementation.
+
+Facts are appended with `scripts/memory-learn.js` and searched with
+`scripts/memory-recall.js`. Never commit access tokens or private customer data.
+
+Before release, validate JSON with `jq empty` and JavaScript with `node --check`.

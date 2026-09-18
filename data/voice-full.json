@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "default_language": "mk-MK",
+  "languages": ["mk-MK", "en-US", "sr-RS", "bg-BG", "de-DE", "fr-FR", "es-ES", "it-IT"],
+  "input": { "provider": "web-speech-compatible", "max_seconds": 60 },
+  "output": { "provider": "web-speech-compatible", "rate": 1, "pitch": 1 },
+  "wake_words": ["хјуго", "hugo", "jarvis"]
+}

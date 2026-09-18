@@ -1,0 +1,17 @@
+name: Hugo Daily Digest
+on:
+  schedule:
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build memory digest
+        run: node -e "const fs=require('fs'); const lines=fs.readFileSync('memory/conversations.jsonl','utf8').split('\\n').filter(Boolean); console.log('Conversation records:', lines.length)"

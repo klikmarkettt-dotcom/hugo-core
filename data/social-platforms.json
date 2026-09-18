@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "platforms": {
+    "facebook": { "api": "https://graph.facebook.com/v20.0", "token_env": "FACEBOOK_ACCESS_TOKEN" },
+    "instagram": { "api": "https://graph.facebook.com/v20.0", "token_env": "INSTAGRAM_ACCESS_TOKEN" },
+    "youtube": { "api": "https://www.googleapis.com/youtube/v3", "token_env": "YOUTUBE_API_KEY" },
+    "reddit": { "api": "https://oauth.reddit.com", "token_env": "REDDIT_ACCESS_TOKEN" },
+    "linkedin": { "api": "https://api.linkedin.com/v2", "token_env": "LINKEDIN_ACCESS_TOKEN" },
+    "x": { "api": "https://api.x.com/2", "token_env": "X_ACCESS_TOKEN" },
+    "tiktok": { "api": "https://open.tiktokapis.com/v2", "token_env": "TIKTOK_ACCESS_TOKEN" }
+  }
+}

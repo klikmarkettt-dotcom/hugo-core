@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "default_timeout_ms": 30000,
+  "max_retries": 2,
+  "allowed_actions": ["http", "shell", "memory", "webhook"],
+  "requires_approval": ["shell", "publish", "delete"],
+  "scheduler": { "timezone": "Europe/Skopje", "max_concurrent": 2 }
+}

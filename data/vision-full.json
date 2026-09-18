@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "engine": { "default": "http", "timeout_ms": 30000, "max_html_bytes": 5000000 },
+  "actions": ["browse", "screenshot", "read", "click_text", "type_field", "navigate"],
+  "security": { "allowed_protocols": ["http:", "https:"], "deny_private_networks": true, "allow_hosts": [] },
+  "backends": ["browser-use", "glazyr-viz", "molmoweb", "local-browser-use"]
+}

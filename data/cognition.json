@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "default_max_steps": 8,
+  "max_replans": 3,
+  "require_observation": true,
+  "reflection_after_task": true,
+  "planning": { "decompose_until": "atomic_action", "parallel_safe": true },
+  "reasoning": { "provider": "openai-compatible", "model_env": "HUGO_REASONING_MODEL", "temperature": 0.2 },
+  "persistence": { "plans": "memory/conversations.jsonl", "reflections": "memory/learned.jsonl" }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "backends": [
+    { "id": "browser-use", "kind": "browser", "repository": "https://github.com/browser-use/browser-use", "enabled": true },
+    { "id": "glazyr-viz", "kind": "screen", "repository": "https://github.com/klikmarkettt-dotcom/glazyr-viz", "enabled": true },
+    { "id": "molmoweb", "kind": "browser", "repository": "https://github.com/klikmarkettt-dotcom/molmoweb", "enabled": true },
+    { "id": "local-browser-use", "kind": "browser", "repository": "https://github.com/klikmarkettt-dotcom/local-browser-use", "enabled": true }
+  ]
+}
