@@ -1,0 +1,111 @@
+{
+  "version": "1.0",
+  "provider": "Higgsfield AI",
+  "api": {
+    "base_url": "https://api.higgsfield.ai/v1",
+    "auth": "bearer_token",
+    "key_required": true,
+    "get_key_at": "https://cloud.higgsfield.ai"
+  },
+  "capabilities": {
+    "image_generation": {
+      "enabled": true,
+      "models": [
+        "flux-pro",
+        "flux-dev",
+        "sdxl",
+        "ideogram-v2",
+        "recraft-v3",
+        "sd3-large",
+        "playground-v2.5"
+      ],
+      "params": [
+        "prompt",
+        "width",
+        "height",
+        "model",
+        "seed",
+        "style"
+      ],
+      "endpoint": "/images/generate"
+    },
+    "video_generation": {
+      "enabled": true,
+      "models": [
+        "sora-2",
+        "veo-3",
+        "kling-3",
+        "seedance-1",
+        "hailuo-02",
+        "ltx-2",
+        "wan-2.5"
+      ],
+      "params": [
+        "prompt",
+        "duration",
+        "aspect_ratio",
+        "model"
+      ],
+      "endpoint": "/videos/generate"
+    },
+    "brand_kits": {
+      "enabled": true,
+      "endpoint": "/brands/create",
+      "description": "Create full brand kits (logos, colors, fonts, assets)"
+    },
+    "soul_id": {
+      "enabled": true,
+      "endpoint": "/souls/create",
+      "description": "Character consistency - train a face once, use everywhere"
+    },
+    "website_builder": {
+      "enabled": true,
+      "description": "Generate React 19 + TanStack Start websites from prompt"
+    },
+    "marketing_campaigns": {
+      "enabled": true,
+      "description": "Full campaign generation (research → plan → assets → launch)"
+    }
+  },
+  "skills": [
+    {
+      "name": "image-gen",
+      "desc": "Generate images with 50+ models"
+    },
+    {
+      "name": "video-gen",
+      "desc": "Generate cinematic videos (Sora 2, Veo 3, etc)"
+    },
+    {
+      "name": "brand-kit",
+      "desc": "Create full brand identity packs"
+    },
+    {
+      "name": "soul-id",
+      "desc": "Character consistency training"
+    },
+    {
+      "name": "website-builder",
+      "desc": "React websites from prompt"
+    },
+    {
+      "name": "marketing-campaign",
+      "desc": "End-to-end marketing automation"
+    },
+    {
+      "name": "ugc-generator",
+      "desc": "User-generated-content style videos"
+    },
+    {
+      "name": "product-photography",
+      "desc": "Product photos with AI models"
+    },
+    {
+      "name": "logo-design",
+      "desc": "Generate logos and brand marks"
+    }
+  ],
+  "free_credits": 15,
+  "pricing": "pay-as-you-go",
+  "docs": "https://docs.higgsfield.ai"
+}

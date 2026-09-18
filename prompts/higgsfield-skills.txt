@@ -1,0 +1,56 @@
+# Higgsfield AI Skills — интеграција во Hugo
+
+## Достапни капабилитети
+
+### 1. Генерирање слики (50+ модели)
+- Flux Pro, Flux Dev, SDXL, SD3 Large
+- Ideogram v2, Recraft v3, Playground v2.5
+- Prompt: текстуален опис
+- Параметри: prompt, width, height, model, seed, style
+
+### 2. Генерирање видео (најмоќното)
+- Sora 2 (OpenAI)
+- Veo 3 (Google)
+- Kling 3.0
+- Seedance 1
+- Hailuo 02
+- LTX 2
+- Wan 2.5
+- Параметри: prompt, duration (секунди), aspect_ratio, model
+
+### 3. Brand Kits
+- Лога, бои, фонтови, assets
+- Комплетен бренд пакет од еден промпт
+
+### 4. Soul ID (Character Consistency)
+- Тренирај лице еднаш
+- Користи го во безброј генерации
+- Совршено за brand ambassadors
+
+### 5. Website Builder
+- React 19 + TanStack Start
+- Целосни веб-страници од промпт
+
+### 6. Marketing Campaigns
+- End-to-end автоматизација
+- Research → Plan → Assets → Launch
+
+## Како Hugo ги користи
+
+Hugo автоматски детектира кога корисникот бара:
+- „Направи слика на...“ → higgsfield_image
+- „Направи видео...“ → higgsfield_video
+- „Направи бренд за...“ → higgsfield_brand
+- „Направи кампања за...“ → higgsfield_campaign
+
+## API Key
+
+Корисникот треба да го внесе својот API key од https://cloud.higgsfield.ai
+во Hugo Settings → Higgsfield API Key.
+
+Без API key, овие tools не работат.
+
+## Free Credits
+
+Секој нов акаунт добива $15 бесплатни кредити.
+Доволни за ~50-100 генерации зависно од моделот.
