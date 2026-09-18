@@ -1,5 +1,11 @@
 # Hugo Core
 
+## Hugo App
+
+Open the remote interface at [hugo-app](https://klikmarkettt-dotcom.github.io/hugo-app/).
+The PC remains the primary Hugo hub; the phone can connect to it through a private
+Tailscale or equivalent tunnel using `scripts/device-client.js`.
+
 Backend/data layer for the Hugo/JARVIS assistant. Runtime modules use Node.js 20
 and persist durable state as append-only JSONL.
 
@@ -38,3 +44,16 @@ Additional optional upstreams are recorded in `data/upstream-repositories.json`:
 Playwright, the MCP TypeScript SDK and server catalog, LangGraph, and
 OpenTelemetry. `scripts/playwright-adapter.js` activates only when the optional
 `playwright` package is installed; the default HTTP browser path remains intact.
+
+## PC and phone
+
+Run the gateway on the PC with `HUGO_DEVICE_TOKEN=<random-secret> node
+scripts/device-gateway.js`. Keep its default bind address on `127.0.0.1` and
+expose it only through a private tunnel. Pair the phone with a generated token
+from `scripts/device-pairing.js`; never put the token in GitHub or the frontend.
+The gateway supports health, planning, remember, recall, browser-read, and an
+explicitly configured `HUGO_PC_CONTROL_ENDPOINT` for OS-level control. Without
+that endpoint, arbitrary PC control is rejected.
+
+Memory sync covers facts, conversations, learned skills, graph indexes, and
+personal state files through `syncAllMemory`; GitHub is the shared durable store.

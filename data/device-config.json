@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "primary_device": "pc",
+  "remote_clients": ["phone", "tablet", "browser"],
+  "gateway": {
+    "host": "127.0.0.1",
+    "port": 8787,
+    "token_env": "HUGO_DEVICE_TOKEN",
+    "transport": "tailscale-or-private-tunnel",
+    "never_bind_public_by_default": true
+  },
+  "actions": ["health", "plan", "remember", "recall", "browser_read", "pc_control"],
+  "sync": {
+    "repository": "klikmarkettt-dotcom/hugo-core",
+    "branch": "main",
+    "files": ["memory/facts.jsonl", "memory/conversations.jsonl", "memory/learned.jsonl", "memory/knowledge-graph.json", "memory/temporal-index.json", "memory/backlinks.json", "memory/notes.json", "memory/habits.json", "memory/todos.json", "memory/journal.jsonl"]
+  }
+}
