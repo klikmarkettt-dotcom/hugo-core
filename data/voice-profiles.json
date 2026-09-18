@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "voices": {
+    "mk": {
+      "lang": "mk-MK",
+      "rate": 1.05,
+      "pitch": 1.0,
+      "voices": [
+        "Google Macedonian",
+        "Macedonian"
+      ]
+    },
+    "en": {
+      "lang": "en-US",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google US English",
+        "Samantha"
+      ]
+    },
+    "sr": {
+      "lang": "sr-RS",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Serbian"
+      ]
+    },
+    "bg": {
+      "lang": "bg-BG",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Bulgarian"
+      ]
+    },
+    "de": {
+      "lang": "de-DE",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google German"
+      ]
+    },
+    "fr": {
+      "lang": "fr-FR",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google French"
+      ]
+    },
+    "es": {
+      "lang": "es-ES",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Spanish"
+      ]
+    },
+    "it": {
+      "lang": "it-IT",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Italian"
+      ]
+    },
+    "ru": {
+      "lang": "ru-RU",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Russian"
+      ]
+    },
+    "zh": {
+      "lang": "zh-CN",
+      "rate": 1.0,
+      "pitch": 1.0,
+      "voices": [
+        "Google Chinese"
+      ]
+    }
+  },
+  "total": 10
+}

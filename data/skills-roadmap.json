@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "paths": {
+    "python": [
+      "variables",
+      "data-types",
+      "loops",
+      "functions",
+      "classes",
+      "modules",
+      "asyncio",
+      "fastapi",
+      "django",
+      "pandas"
+    ],
+    "javascript": [
+      "variables",
+      "functions",
+      "objects",
+      "arrays",
+      "async",
+      "promises",
+      "react",
+      "nodejs",
+      "typescript",
+      "nextjs"
+    ],
+    "crypto": [
+      "bitcoin",
+      "ethereum",
+      "wallets",
+      "exchanges",
+      "defi",
+      "nft",
+      "trading",
+      "security",
+      "tokenomics",
+      "dao"
+    ],
+    "ai": [
+      "python",
+      "numpy",
+      "pandas",
+      "sklearn",
+      "pytorch",
+      "tensorflow",
+      "llm",
+      "rag",
+      "agents",
+      "deployment"
+    ],
+    "web-dev": [
+      "html",
+      "css",
+      "javascript",
+      "react",
+      "nodejs",
+      "database",
+      "api",
+      "devops",
+      "security",
+      "performance"
+    ]
+  },
+  "levels": {
+    "beginner": 20,
+    "intermediate": 40,
+    "advanced": 60,
+    "expert": 80
+  }
+}

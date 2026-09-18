@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "default": "dark",
+  "themes": {
+    "dark": {
+      "bg": "#07070f",
+      "text": "#e8ecff",
+      "accent": "#00e5ff"
+    },
+    "light": {
+      "bg": "#f5f5f7",
+      "text": "#1a1a1a",
+      "accent": "#0066ff"
+    },
+    "cyberpunk": {
+      "bg": "#0d0221",
+      "text": "#ff00ff",
+      "accent": "#00ffff"
+    },
+    "matrix": {
+      "bg": "#000000",
+      "text": "#00ff00",
+      "accent": "#00ff88"
+    },
+    "nord": {
+      "bg": "#2e3440",
+      "text": "#eceff4",
+      "accent": "#88c0d0"
+    },
+    "dracula": {
+      "bg": "#282a36",
+      "text": "#f8f8f2",
+      "accent": "#bd93f9"
+    },
+    "monokai": {
+      "bg": "#272822",
+      "text": "#f8f8f2",
+      "accent": "#a6e22e"
+    },
+    "solarized": {
+      "bg": "#002b36",
+      "text": "#839496",
+      "accent": "#b58900"
+    },
+    "gruvbox": {
+      "bg": "#282828",
+      "text": "#ebdbb2",
+      "accent": "#fabd2f"
+    },
+    "tokyo": {
+      "bg": "#1a1b26",
+      "text": "#c0caf5",
+      "accent": "#7aa2f7"
+    },
+    "catppuccin": {
+      "bg": "#1e1e2e",
+      "text": "#cdd6f4",
+      "accent": "#cba6f7"
+    }
+  }
+}
