@@ -1,0 +1,49 @@
+{
+  "version": "5.0",
+  "system": "sqlite-jsonl-hybrid",
+  "stores": {
+    "facts": {
+      "file": "memory/facts.jsonl",
+      "type": "append-only",
+      "search": "keyword+semantic"
+    },
+    "conversations": {
+      "file": "memory/conversations.jsonl",
+      "type": "session",
+      "retention": "90d"
+    },
+    "learned": {
+      "file": "memory/learned.jsonl",
+      "type": "skills",
+      "auto_grow": true
+    },
+    "notes": {
+      "file": "memory/notes.json",
+      "type": "key-value"
+    },
+    "habits": {
+      "file": "memory/habits.json",
+      "type": "tracker"
+    },
+    "todos": {
+      "file": "memory/todos.json",
+      "type": "list"
+    },
+    "journal": {
+      "file": "memory/journal.jsonl",
+      "type": "daily"
+    }
+  },
+  "recall": {
+    "method": "hybrid",
+    "keyword_weight": 0.4,
+    "semantic_weight": 0.6,
+    "max_results": 20,
+    "time_decay_days": 30
+  },
+  "sync": {
+    "github_repo": "klikmarkettt-dotcom/hugo-core",
+    "auto_commit": true,
+    "interval_minutes": 15
+  }
+}

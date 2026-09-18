@@ -1,0 +1,51 @@
+{
+  "version": "5.0",
+  "strategies": {
+    "from_conversations": {
+      "enabled": true,
+      "extract": [
+        "facts",
+        "preferences",
+        "patterns"
+      ],
+      "min_messages": 3
+    },
+    "from_github_repos": {
+      "enabled": true,
+      "sources": [
+        "e2b-dev/awesome-ai-agents",
+        "punkpeye/awesome-mcp-servers",
+        "kyrolabs/awesome-langchain",
+        "steven2358/awesome-generative-ai",
+        "humanloop/awesome-llm-apps",
+        "tensorchord/Awesome-LLMOps",
+        "Hannibal046/Awesome-LLM",
+        "eugeneyan/applied-ml",
+        "ashishpatel26/500-AI-Agents-Projects",
+        "IshaanLabs/Awesome-AI-Agents"
+      ],
+      "extract_patterns": [
+        "markdown_links",
+        "list_items",
+        "headers"
+      ],
+      "max_per_repo": 200
+    },
+    "from_web": {
+      "enabled": false,
+      "sources": [
+        "wikipedia",
+        "arxiv",
+        "dev.to"
+      ]
+    },
+    "from_feedback": {
+      "enabled": true,
+      "thumbs_up_boosts": 2.0,
+      "thumbs_down_penalty": 0.5
+    }
+  },
+  "auto_learn_interval_minutes": 15,
+  "max_facts": 5000,
+  "deduplication": "fuzzy"
+}

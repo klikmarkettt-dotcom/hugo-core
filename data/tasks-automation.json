@@ -1,0 +1,103 @@
+{
+  "version": "5.0",
+  "automation_types": {
+    "browser": {
+      "engine": "playwright",
+      "actions": [
+        "open",
+        "click",
+        "type",
+        "screenshot",
+        "extract",
+        "scroll",
+        "wait"
+      ],
+      "enabled": true
+    },
+    "shell": {
+      "engine": "termux-api + bash",
+      "actions": [
+        "exec",
+        "list",
+        "read",
+        "write",
+        "send_sms",
+        "make_call",
+        "notify"
+      ],
+      "enabled": true
+    },
+    "file": {
+      "actions": [
+        "read",
+        "write",
+        "delete",
+        "move",
+        "copy",
+        "zip",
+        "unzip"
+      ],
+      "enabled": true
+    },
+    "network": {
+      "actions": [
+        "fetch",
+        "post",
+        "ping",
+        "download",
+        "upload"
+      ],
+      "enabled": true
+    },
+    "scheduled": {
+      "engine": "cron + github-actions",
+      "actions": [
+        "daily_digest",
+        "sync_memory",
+        "fetch_news",
+        "check_reminders",
+        "learn_from_github"
+      ],
+      "enabled": true
+    }
+  },
+  "workflows": [
+    {
+      "name": "morning_brief",
+      "trigger": "cron 8am",
+      "steps": [
+        "weather",
+        "news",
+        "todos",
+        "reminders"
+      ]
+    },
+    {
+      "name": "evening_review",
+      "trigger": "cron 9pm",
+      "steps": [
+        "daily_journal",
+        "habit_check",
+        "tomorrow_plan"
+      ]
+    },
+    {
+      "name": "hourly_learn",
+      "trigger": "cron hourly",
+      "steps": [
+        "fetch_github",
+        "extract_skills",
+        "dedupe",
+        "save"
+      ]
+    },
+    {
+      "name": "sync_memory",
+      "trigger": "cron 15min",
+      "steps": [
+        "commit_facts",
+        "push_github"
+      ]
+    }
+  ]
+}

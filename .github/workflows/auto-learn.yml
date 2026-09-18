@@ -1,0 +1,27 @@
+name: Hugo Auto-Learn
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Run auto-learn
+        run: |
+          node scripts/auto-learn.js > learn-output.txt 2>&1
+          tail -20 learn-output.txt
+      - name: Commit results
+        run: |
+          git config user.email "hugo@users.noreply.github.com"
+          git config user.name "Hugo Bot"
+          git add -A
+          git commit -m "Auto-learn cycle $(date -u +%Y-%m-%d-%H:%M)" || echo "no changes"
+          git push || echo "push failed"

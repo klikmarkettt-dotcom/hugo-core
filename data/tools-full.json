@@ -1,7 +1,7 @@
 {
-  "version": "4.0",
+  "version": "5.0",
   "description": "Hugo Jarvis tool registry — free/offline-first",
-  "total": 192,
+  "total": 215,
   "tools": {
     "generate_image": {
       "icon": "🎨",
@@ -5305,6 +5305,642 @@
       "params": {},
       "example_mk": "System info",
       "example_en": "System info",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "remember": {
+      "icon": "🧠",
+      "name": "Remember fact",
+      "category": "memory",
+      "keywords_mk": [
+        "запамети",
+        "remember",
+        "запиши",
+        "memory",
+        "памти"
+      ],
+      "keywords_en": [
+        "remember",
+        "save fact",
+        "memory",
+        "store",
+        "keep"
+      ],
+      "api": "local:memory/facts.jsonl",
+      "method": "LOCAL",
+      "params": {
+        "fact": "text"
+      },
+      "example_mk": "Запамети дека сум Марко",
+      "example_en": "Remember I am Marko",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "recall": {
+      "icon": "💭",
+      "name": "Recall memory",
+      "category": "memory",
+      "keywords_mk": [
+        "сети се",
+        "recall",
+        "што знаеш",
+        "memorija",
+        "помни"
+      ],
+      "keywords_en": [
+        "recall",
+        "remember",
+        "what do you know",
+        "memory",
+        "find"
+      ],
+      "api": "local:memory/facts.jsonl",
+      "method": "LOCAL",
+      "params": {
+        "query": "keyword"
+      },
+      "example_mk": "Што знаеш за мене?",
+      "example_en": "What do you know about me?",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "forget": {
+      "icon": "🧹",
+      "name": "Forget fact",
+      "category": "memory",
+      "keywords_mk": [
+        "заборави",
+        "forget",
+        "избриши факт",
+        "delete memory",
+        "erase"
+      ],
+      "keywords_en": [
+        "forget",
+        "delete memory",
+        "erase",
+        "remove fact"
+      ],
+      "api": "local:memory/facts.jsonl",
+      "method": "LOCAL",
+      "params": {
+        "id": "fact id"
+      },
+      "example_mk": "Заборави го тоа",
+      "example_en": "Forget that",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "learn_from_repo": {
+      "icon": "🎓",
+      "name": "Learn from GitHub repo",
+      "category": "learning",
+      "keywords_mk": [
+        "учи од github",
+        "learn from repo",
+        "учи",
+        "learn",
+        "study repo"
+      ],
+      "keywords_en": [
+        "learn from repo",
+        "study github",
+        "learn",
+        "github learn",
+        "extract skills"
+      ],
+      "api": "https://api.github.com/repos/{repo}",
+      "method": "GET",
+      "params": {
+        "repo": "owner/name"
+      },
+      "example_mk": "Учи од e2b-dev/awesome-ai-agents",
+      "example_en": "Learn from e2b-dev/awesome-ai-agents",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "learn_from_url": {
+      "icon": "📚",
+      "name": "Learn from URL",
+      "category": "learning",
+      "keywords_mk": [
+        "учи од url",
+        "learn from url",
+        "study page",
+        "учи од страница",
+        "learn"
+      ],
+      "keywords_en": [
+        "learn from url",
+        "study page",
+        "learn",
+        "url learn",
+        "extract"
+      ],
+      "api": "local:fetch",
+      "method": "GET",
+      "params": {
+        "url": "url"
+      },
+      "example_mk": "Учи од https://example.com",
+      "example_en": "Learn from https://example.com",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "self_upgrade": {
+      "icon": "🔄",
+      "name": "Self upgrade",
+      "category": "learning",
+      "keywords_mk": [
+        "сам надгради се",
+        "self upgrade",
+        "upgrade",
+        "надгради",
+        "auto upgrade"
+      ],
+      "keywords_en": [
+        "self upgrade",
+        "auto upgrade",
+        "upgrade",
+        "improve",
+        "evolve"
+      ],
+      "api": "local:self-learn",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Надгради се",
+      "example_en": "Self upgrade",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "translate_multi": {
+      "icon": "🌍",
+      "name": "Multi-engine translate",
+      "category": "text",
+      "keywords_mk": [
+        "преведи",
+        "translate",
+        "превод",
+        "translate",
+        "translate text"
+      ],
+      "keywords_en": [
+        "translate",
+        "translation",
+        "multi translate",
+        "translate text",
+        "convert language"
+      ],
+      "api": "https://api.mymemory.translated.net/get",
+      "method": "GET",
+      "params": {
+        "q": "text",
+        "from": "mk",
+        "to": "en"
+      },
+      "example_mk": "Преведи здраво на англиски",
+      "example_en": "Translate hello to English",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "detect_language": {
+      "icon": "🔍",
+      "name": "Detect language",
+      "category": "text",
+      "keywords_mk": [
+        "детектирај јазик",
+        "detect language",
+        "кој јазик",
+        "detect lang",
+        "language detect"
+      ],
+      "keywords_en": [
+        "detect language",
+        "language detection",
+        "which language",
+        "lang detect",
+        "detect"
+      ],
+      "api": "local:heuristic",
+      "method": "LOCAL",
+      "params": {
+        "text": "text"
+      },
+      "example_mk": "Кој јазик е ова?",
+      "example_en": "Which language is this?",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "chat_mode": {
+      "icon": "💬",
+      "name": "Chat mode",
+      "category": "conversation",
+      "keywords_mk": [
+        "чат",
+        "chat",
+        "разговор",
+        "conversation",
+        "talk"
+      ],
+      "keywords_en": [
+        "chat",
+        "conversation",
+        "talk",
+        "chat mode",
+        "converse"
+      ],
+      "api": "https://text.pollinations.ai/{prompt}",
+      "method": "GET",
+      "params": {
+        "prompt": "message"
+      },
+      "example_mk": "Чат со мене",
+      "example_en": "Chat with me",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "expert_mode": {
+      "icon": "🎓",
+      "name": "Expert mode",
+      "category": "conversation",
+      "keywords_mk": [
+        "експерт режим",
+        "expert mode",
+        "експерт",
+        "expert",
+        "deep"
+      ],
+      "keywords_en": [
+        "expert mode",
+        "expert",
+        "deep dive",
+        "specialist",
+        "guru"
+      ],
+      "api": "https://text.pollinations.ai/{prompt}",
+      "method": "GET",
+      "params": {
+        "prompt": "topic"
+      },
+      "example_mk": "Експерт за Python",
+      "example_en": "Python expert",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "tutor_mode": {
+      "icon": "📖",
+      "name": "Tutor mode",
+      "category": "conversation",
+      "keywords_mk": [
+        "учител режим",
+        "tutor mode",
+        "учи ме",
+        "tutor",
+        "teach me"
+      ],
+      "keywords_en": [
+        "tutor",
+        "teach me",
+        "learn",
+        "tutor mode",
+        "study"
+      ],
+      "api": "https://text.pollinations.ai/{prompt}",
+      "method": "GET",
+      "params": {
+        "prompt": "subject"
+      },
+      "example_mk": "Учи ме физика",
+      "example_en": "Teach me physics",
+      "fallback": "Не е достапно",
+      "rate_limit": "public"
+    },
+    "open_url": {
+      "icon": "🌐",
+      "name": "Open URL",
+      "category": "automation",
+      "keywords_mk": [
+        "отвори url",
+        "open url",
+        "отвори страница",
+        "open",
+        "visit"
+      ],
+      "keywords_en": [
+        "open url",
+        "visit",
+        "navigate",
+        "open",
+        "browse"
+      ],
+      "api": "local:window.open",
+      "method": "LOCAL",
+      "params": {
+        "url": "url"
+      },
+      "example_mk": "Отвори google.com",
+      "example_en": "Open google.com",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "take_screenshot": {
+      "icon": "📸",
+      "name": "Screenshot",
+      "category": "automation",
+      "keywords_mk": [
+        "скриншот",
+        "screenshot",
+        "фати екран",
+        "capture",
+        "screen"
+      ],
+      "keywords_en": [
+        "screenshot",
+        "capture",
+        "take screenshot",
+        "screen",
+        "snap"
+      ],
+      "api": "local:screenshot",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Направи скриншот",
+      "example_en": "Take screenshot",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "send_notification": {
+      "icon": "🔔",
+      "name": "Send notification",
+      "category": "automation",
+      "keywords_mk": [
+        "нотификација",
+        "notification",
+        "извести ме",
+        "notify",
+        "alert"
+      ],
+      "keywords_en": [
+        "notification",
+        "notify",
+        "alert",
+        "ping",
+        "tell me"
+      ],
+      "api": "local:Notification",
+      "method": "LOCAL",
+      "params": {
+        "title": "title",
+        "body": "body"
+      },
+      "example_mk": "Извести ме по 5 мин",
+      "example_en": "Notify me in 5 min",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "set_reminder": {
+      "icon": "⏰",
+      "name": "Set reminder",
+      "category": "automation",
+      "keywords_mk": [
+        "потсетник",
+        "reminder",
+        "потсети ме",
+        "remind",
+        "alarm"
+      ],
+      "keywords_en": [
+        "reminder",
+        "remind me",
+        "alarm",
+        "alert",
+        "notify"
+      ],
+      "api": "local:reminders",
+      "method": "LOCAL",
+      "params": {
+        "text": "task",
+        "when": "time"
+      },
+      "example_mk": "Потсети ме да купам леб",
+      "example_en": "Remind me to buy bread",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "create_todo": {
+      "icon": "✅",
+      "name": "Create todo",
+      "category": "automation",
+      "keywords_mk": [
+        "задача",
+        "todo",
+        "додади задача",
+        "create todo",
+        "task"
+      ],
+      "keywords_en": [
+        "todo",
+        "task",
+        "create todo",
+        "add task",
+        "checklist"
+      ],
+      "api": "local:todos",
+      "method": "LOCAL",
+      "params": {
+        "text": "task"
+      },
+      "example_mk": "Додај задача перење",
+      "example_en": "Add laundry task",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "save_note": {
+      "icon": "📝",
+      "name": "Save note",
+      "category": "automation",
+      "keywords_mk": [
+        "белешка",
+        "note",
+        "запиши",
+        "save note",
+        "memo"
+      ],
+      "keywords_en": [
+        "note",
+        "save note",
+        "write note",
+        "memo",
+        "memo"
+      ],
+      "api": "local:notes",
+      "method": "LOCAL",
+      "params": {
+        "text": "note"
+      },
+      "example_mk": "Запиши: купи млеко",
+      "example_en": "Save: buy milk",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "daily_digest": {
+      "icon": "📊",
+      "name": "Daily digest",
+      "category": "analytics",
+      "keywords_mk": [
+        "дневен извештај",
+        "daily digest",
+        "каков беше ден",
+        "digest",
+        "summary"
+      ],
+      "keywords_en": [
+        "daily digest",
+        "daily summary",
+        "day summary",
+        "digest",
+        "daily"
+      ],
+      "api": "local:memory",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Дневен извештај",
+      "example_en": "Daily digest",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "stats_dashboard": {
+      "icon": "📈",
+      "name": "Stats dashboard",
+      "category": "analytics",
+      "keywords_mk": [
+        "статистика",
+        "stats",
+        "dashboard",
+        "stats",
+        "analytics"
+      ],
+      "keywords_en": [
+        "stats",
+        "dashboard",
+        "analytics",
+        "statistics",
+        "metrics"
+      ],
+      "api": "local:memory",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Прикажи статистика",
+      "example_en": "Show stats",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "habit_check": {
+      "icon": "✅",
+      "name": "Habit check",
+      "category": "analytics",
+      "keywords_mk": [
+        "навики",
+        "habits",
+        "check habits",
+        "habits",
+        "track"
+      ],
+      "keywords_en": [
+        "habits",
+        "habit check",
+        "tracker",
+        "habits",
+        "track"
+      ],
+      "api": "local:memory",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Провери навики",
+      "example_en": "Check habits",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "mcp_call": {
+      "icon": "🔌",
+      "name": "MCP call",
+      "category": "mcp",
+      "keywords_mk": [
+        "mcp call",
+        "mcp",
+        "call tool",
+        "mcp",
+        "tool call"
+      ],
+      "keywords_en": [
+        "mcp call",
+        "mcp",
+        "call",
+        "tool",
+        "invoke"
+      ],
+      "api": "local:mcp",
+      "method": "LOCAL",
+      "params": {
+        "tool": "name",
+        "args": "args"
+      },
+      "example_mk": "MCP call list_products",
+      "example_en": "MCP call list_products",
+      "fallback": "Не е достапно",
+      "rate_limit": "local"
+    },
+    "voice_command": {
+      "icon": "🎙",
+      "name": "Voice command",
+      "category": "jarvis",
+      "keywords_mk": [
+        "глас команда",
+        "voice command",
+        "слушај",
+        "voice",
+        "listen"
+      ],
+      "keywords_en": [
+        "voice",
+        "voice command",
+        "listen",
+        "speak",
+        "talk"
+      ],
+      "api": "local:speech",
+      "method": "LOCAL",
+      "params": {},
+      "example_mk": "Слушај ме",
+      "example_en": "Listen to me",
+      "fallback": "Локално",
+      "rate_limit": "offline"
+    },
+    "speak_text": {
+      "icon": "🔊",
+      "name": "Speak text",
+      "category": "jarvis",
+      "keywords_mk": [
+        "кажи",
+        "say",
+        "зборувај",
+        "speak",
+        "say this"
+      ],
+      "keywords_en": [
+        "speak",
+        "say",
+        "talk",
+        "read aloud",
+        "voice"
+      ],
+      "api": "local:speechSynthesis",
+      "method": "LOCAL",
+      "params": {
+        "text": "text"
+      },
+      "example_mk": "Кажи здраво",
+      "example_en": "Say hello",
       "fallback": "Локално",
       "rate_limit": "offline"
     }

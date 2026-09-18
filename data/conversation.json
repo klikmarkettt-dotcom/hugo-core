@@ -1,0 +1,49 @@
+{
+  "version": "5.0",
+  "llm_providers": [
+    {
+      "name": "pollinations-openai",
+      "url": "https://text.pollinations.ai/openai",
+      "model": "openai",
+      "free": true
+    },
+    {
+      "name": "pollinations-mistral",
+      "url": "https://text.pollinations.ai/openai",
+      "model": "mistral",
+      "free": true
+    },
+    {
+      "name": "pollinations-llama",
+      "url": "https://text.pollinations.ai/openai",
+      "model": "llama",
+      "free": true
+    },
+    {
+      "name": "pollinations-direct",
+      "url": "https://text.pollinations.ai/{prompt}",
+      "free": true
+    }
+  ],
+  "features": {
+    "context_window": 10,
+    "streaming": false,
+    "multi_language": true,
+    "personality": "jarvis-friendly",
+    "emotion_aware": true,
+    "tone_adaptation": true
+  },
+  "modes": {
+    "chat": "Casual conversation",
+    "expert": "Deep expertise on topic",
+    "tutor": "Teaching with examples",
+    "assistant": "Task-oriented",
+    "companion": "Empathetic listener"
+  },
+  "safety": {
+    "no_hallucination": true,
+    "admit_unknown": true,
+    "no_made_up_numbers": true,
+    "no_fake_urls": true
+  }
+}
