@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "policy": "external-adapter",
+  "adapters": [
+    { "id": "browser-use", "category": "vision", "source": "https://github.com/browser-use/browser-use", "transport": "http", "env": "BROWSER_USE_ENDPOINT", "capabilities": ["browse", "click", "type", "extract"] },
+    { "id": "glazyr-viz", "category": "vision", "source": "https://github.com/senti-001/glazyr-viz", "transport": "http", "endpoint": "http://127.0.0.1:4545", "capabilities": ["dom-state", "screenshot", "mcp"] },
+    { "id": "cognee", "category": "memory", "source": "https://github.com/topoteretes/cognee", "transport": "http", "env": "COGNEE_ENDPOINT", "capabilities": ["knowledge-graph", "semantic-search", "entity-extraction"] },
+    { "id": "memex", "category": "memory", "source": "https://github.com/vndee/memex", "transport": "http", "env": "MEMEX_ENDPOINT", "capabilities": ["temporal-memory", "hybrid-search", "mcp"] },
+    { "id": "gbrain", "category": "memory", "source": "https://github.com/garrytan/gbrain", "transport": "local", "capabilities": ["markdown-memory", "backlinks", "graph-reasoning"] },
+    { "id": "open-jarvis", "category": "cognition", "source": "https://github.com/open-jarvis/OpenJarvis", "transport": "openai-compatible", "env": "OPEN_JARVIS_ENDPOINT", "capabilities": ["local-inference", "skills", "learning"] },
+    { "id": "openclawminicrm", "category": "business", "source": "https://github.com/smlsoft/openclawminicrm", "transport": "http", "env": "CRM_ENDPOINT", "capabilities": ["crm", "sales", "support"] },
+    { "id": "open-ai-social-agent", "category": "business", "source": "https://github.com/SamurAIGPT/open-ai-social-agent", "transport": "http", "env": "SOCIAL_AGENT_ENDPOINT", "capabilities": ["publishing", "listening", "trends"] },
+    { "id": "open-ai-marketing-agent", "category": "business", "source": "https://github.com/SamurAIGPT/ai-marketing-agent", "transport": "http", "env": "MARKETING_AGENT_ENDPOINT", "capabilities": ["campaigns", "analytics", "multi-channel"] }
+  ]
+}
