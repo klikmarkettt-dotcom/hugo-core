@@ -1,0 +1,15 @@
+{
+  "image": {"icon": "🎨", "keywords": ["направи слика", "napravi slika", "нацртај", "nacrtaj", "генерирај", "generiraj", "create image", "draw"], "api": "https://image.pollinations.ai/prompt/{prompt}"},
+  "crypto_price": {"icon": "💰", "keywords": ["цена", "price", "cena"], "api": "https://api.coingecko.com/api/v3/simple/price"},
+  "crypto_top": {"icon": "📊", "keywords": ["топ", "top", "крипто", "crypto"]},
+  "hackernews": {"icon": "📰", "keywords": ["хакер", "hacker", "hn"], "api": "https://hacker-news.firebaseio.com/v0/topstories.json"},
+  "wikipedia": {"icon": "📖", "keywords": ["википедија", "wikipedia", "wiki"], "api": "https://en.wikipedia.org/api/rest_v1/page/summary/{q}"},
+  "weather": {"icon": "🌤", "keywords": ["време", "vreme", "weather"], "api": "https://wttr.in/{city}?format=j1"},
+  "prs": {"icon": "📋", "keywords": ["prs", "pull request"], "api": "https://api.github.com/search/issues"},
+  "gh_user": {"icon": "🐙", "keywords": ["github"], "api": "https://api.github.com/users/{user}"},
+  "password": {"icon": "🔐", "keywords": ["лозинка", "password", "geslo"]},
+  "uuid": {"icon": "🆔", "keywords": ["uuid"]},
+  "qr": {"icon": "📱", "keywords": ["qr"]},
+  "time": {"icon": "🕐", "keywords": ["часот", "time"]},
+  "ip": {"icon": "🌐", "keywords": ["ip"]}
+}

@@ -1,0 +1,5 @@
+{
+  "btc_address": {"pattern": "(btc|bitcoin).*(adres|адрес|wallet)", "msg": "⚠️ BTC адреса бара криптографска библиотека. Користи MetaMask, Trust Wallet."},
+  "private_key": {"pattern": "(private|приват).*(key|клуч)", "msg": "🚫 Приватен клуч НЕ генерирам. НИКОГАШ."},
+  "facebook": {"pattern": "(facebook|fb|instagram).*(post|objavi|објави)", "msg": "⚠️ FB/IG automation не можам — ќе те банираат."}
+}

@@ -1,0 +1,12 @@
+{
+  "categories": {
+    "image": ["generate", "logo", "icon", "upscale", "style-transfer", "qr"],
+    "crypto": ["price", "top", "trending", "chart", "converter", "gas"],
+    "news": ["hackernews", "rss", "mkdnews", "crypto-news", "tech-news"],
+    "web": ["wikipedia", "define", "weather", "translate", "search"],
+    "github": ["user", "repos", "repo", "prs", "search", "clone", "trending"],
+    "text": ["summarize", "rewrite", "email", "tweet", "translate"],
+    "util": ["password", "uuid", "qr", "time", "ip"]
+  },
+  "total": 43
+}

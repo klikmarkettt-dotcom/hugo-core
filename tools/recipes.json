@@ -1,0 +1,7 @@
+{
+  "image_prompt_suffix": ", photorealistic, 8k, cinematic lighting, highly detailed",
+  "llm_models": ["openai", "mistral", "llama"],
+  "pollinations_text": "https://text.pollinations.ai",
+  "pollinations_image": "https://image.pollinations.ai/prompt",
+  "voice_langs": ["mk-MK", "en-US", "sr-RS", "bg-BG", "de-DE", "fr-FR", "es-ES", "it-IT"]
+}

@@ -1,0 +1,13 @@
+Достапни tools:
+- image:generate — Направи слика на [опис]
+- crypto:price — Цена на [BTC|ETH|SOL]
+- crypto:top — Топ 10 крипто
+- news:hackernews — Хакер њуз
+- news:mkdnews — Вести Македонија
+- web:wikipedia — Википедија за [тема]
+- web:weather — Време [град]
+- gh:user — github.com/[user]
+- gh:prs — Моите PRs
+- util:password — Лозинка
+- util:uuid — UUID
+- util:qr — QR [текст]
