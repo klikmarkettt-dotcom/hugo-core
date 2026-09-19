@@ -9,7 +9,7 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "npm run doctor",
+  "postCreateCommand": "npm run first-run",
   "postStartCommand": "if [ -n \"${HUGO_DEVICE_TOKEN}\" ]; then npm run device:gateway; else echo 'HUGO_DEVICE_TOKEN is not configured; gateway is disabled.'; fi",
   "customizations": {
     "vscode": {

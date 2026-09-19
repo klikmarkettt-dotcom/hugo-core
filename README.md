@@ -31,6 +31,10 @@ Codespaces -> Create codespace on main**, and wait for the workspace to finish
 creating. The included `.devcontainer/devcontainer.json` installs Node.js 20,
 runs `npm run doctor`, and forwards the private gateway port `8787`.
 
+The Codespace automatically runs `npm run first-run`. This validates the core,
+loads the safe local configuration, and prints the status of optional AI, voice,
+browser, and device adapters without failing just because one is not installed.
+
 Add `HUGO_DEVICE_TOKEN` as a Codespaces secret before starting the gateway. Without
 that secret the workspace still boots safely, but the gateway remains disabled. The
 Codespace is an on-demand runtime, not permanent hosting: stop it when finished and
