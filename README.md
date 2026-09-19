@@ -153,9 +153,13 @@ Run the gateway on the PC with `HUGO_DEVICE_TOKEN=<random-secret> node
 scripts/device-gateway.js`. Keep its default bind address on `127.0.0.1` and
 expose it only through a private tunnel. Pair the phone with a generated token
 from `scripts/device-pairing.js`; never put the token in GitHub or the frontend.
-The gateway supports health, planning, remember, recall, browser-read, and an
-explicitly configured `HUGO_PC_CONTROL_ENDPOINT` for OS-level control. Without
-that endpoint, arbitrary PC control is rejected.
+The gateway supports health, planning, reasoning, decision-making, remember,
+recall, vision/browser reads, automation webhooks, voice command parsing,
+speech-to-text, text-to-speech, and an explicitly configured
+`HUGO_PC_CONTROL_ENDPOINT` for OS-level control. Without that endpoint, arbitrary
+PC control is rejected. Configure `HUGO_STT_ENDPOINT` and `HUGO_TTS_ENDPOINT` for
+local Whisper.cpp and Piper HTTP adapters; the gateway passes all of these through
+the same bearer-token protection.
 
 Memory sync covers facts, conversations, learned skills, graph indexes, and
 personal state files through `syncAllMemory`; GitHub is the shared durable store.

@@ -1,9 +1,13 @@
 const http = require('node:http');
-const { readJson } = require('./runtime-utils');
 const { plan } = require('./planner');
+const { reason } = require('./reasoner');
+const { decide } = require('./cognition-decider');
 const { learn } = require('./memory-learn');
 const { recall } = require('./memory-recall');
-const { read } = require('./screen-read');
+const { see } = require('./vision-engine');
+const { execute } = require('./automation-engine');
+const { parse } = require('./voice-commands');
+const { transcribe, synthesize } = require('./voice-engine');
 
 function authorized(request, token) {
   const provided = request.headers.authorization || '';
@@ -13,9 +17,15 @@ function authorized(request, token) {
 async function dispatch(action, input = {}) {
   if (action === 'health') return { status: 'ok', device: 'pc', time: new Date().toISOString() };
   if (action === 'plan') return plan(input.task, input.options);
+  if (action === 'reason') return reason(input.problem, input.context, input.options);
+  if (action === 'decide') return decide(input.state, input.options);
   if (action === 'remember') return learn(input.text, input.metadata);
   if (action === 'recall') return recall(input.query, input.options);
-  if (action === 'browser_read') return read(input.url, input.options);
+  if (action === 'see') return see(input.url, input.options);
+  if (action === 'automate') return execute(input.action, input.input, input.options);
+  if (action === 'voice_command') return parse(input.text);
+  if (action === 'voice_transcribe') return transcribe(input.audio, { ...input.options, endpoint: input.options?.endpoint || process.env.HUGO_STT_ENDPOINT, token: input.options?.token || process.env.HUGO_STT_TOKEN });
+  if (action === 'voice_synthesize') return synthesize(input.text, { ...input.options, endpoint: input.options?.endpoint || process.env.HUGO_TTS_ENDPOINT, token: input.options?.token || process.env.HUGO_TTS_TOKEN });
   if (action === 'pc_control') {
     const endpoint = process.env.HUGO_PC_CONTROL_ENDPOINT;
     if (!endpoint) throw new Error('HUGO_PC_CONTROL_ENDPOINT is not configured');
