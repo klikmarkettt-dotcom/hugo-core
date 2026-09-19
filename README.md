@@ -153,6 +153,7 @@ Git-only.
 set -e
 if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
 	ROOT="$(git rev-parse --show-toplevel)"
+	git -C "$ROOT" pull --ff-only origin main
 else
 	ROOT="$PWD/hugo-core"
 	if test -d "$ROOT/.git"; then
