@@ -100,6 +100,13 @@ Playwright, the MCP TypeScript SDK and server catalog, LangGraph, and
 OpenTelemetry. `scripts/playwright-adapter.js` activates only when the optional
 `playwright` package is installed; the default HTTP browser path remains intact.
 
+The expanded integration layer also supports optional Ollama and Open WebUI for
+local cognition, Home Assistant for private device control, n8n for workflows and
+webhooks, Whisper.cpp for offline speech recognition, and Piper for local speech
+output. Run `npm run integrations:health` to get a machine-readable report of all
+configured, reachable, and unavailable adapters. Uninstalled optional services do
+not stop the core runtime.
+
 ## PC and phone
 
 Run the gateway on the PC with `HUGO_DEVICE_TOKEN=<random-secret> node

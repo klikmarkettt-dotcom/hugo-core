@@ -9,6 +9,7 @@
     "start:once": "node scripts/hugo-start.js --once --no-gateway",
     "device:gateway": "node scripts/device-gateway.js",
     "memory:sync": "node scripts/memory-git-sync.js",
-    "doctor": "node scripts/hugo-start.js --once --no-gateway"
+    "doctor": "node scripts/hugo-start.js --once --no-gateway",
+    "integrations:health": "node scripts/integration-health.js"
   }
 }

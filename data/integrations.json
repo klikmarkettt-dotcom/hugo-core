@@ -1,14 +1,65 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "generated": "2026-09-18T13:10:25.895634",
-  "total": 14,
+  "total": 20,
   "categories": [
     "memory",
     "cognition",
     "vision",
-    "business"
+    "business",
+    "devices",
+    "automation",
+    "voice"
   ],
   "repos": [
+    {
+      "name": "ollama",
+      "url": "https://github.com/ollama/ollama.git",
+      "category": "cognition",
+      "desc": "Run local language and embedding models on the PC hub",
+      "skills": ["local-models", "chat", "embeddings"],
+      "path": "optional external service"
+    },
+    {
+      "name": "open-webui",
+      "url": "https://github.com/open-webui/open-webui.git",
+      "category": "cognition",
+      "desc": "Self-hosted chat and document interface for local models",
+      "skills": ["chat-ui", "model-routing", "document-chat"],
+      "path": "optional external service"
+    },
+    {
+      "name": "home-assistant",
+      "url": "https://github.com/home-assistant/core.git",
+      "category": "devices",
+      "desc": "Private home and device control layer for Hugo",
+      "skills": ["smart-home", "presence", "device-control"],
+      "path": "optional external service"
+    },
+    {
+      "name": "n8n",
+      "url": "https://github.com/n8n-io/n8n.git",
+      "category": "automation",
+      "desc": "Visual workflow automation, schedules, and webhooks",
+      "skills": ["workflows", "webhooks", "schedules"],
+      "path": "optional external service"
+    },
+    {
+      "name": "whisper-cpp",
+      "url": "https://github.com/ggerganov/whisper.cpp.git",
+      "category": "voice",
+      "desc": "Offline speech recognition for voice commands",
+      "skills": ["speech-to-text", "offline-transcription"],
+      "path": "optional local tool"
+    },
+    {
+      "name": "piper",
+      "url": "https://github.com/rhasspy/piper.git",
+      "category": "voice",
+      "desc": "Fast local text-to-speech voice output",
+      "skills": ["text-to-speech", "offline-voice"],
+      "path": "optional local tool"
+    },
     {
       "name": "multi-agent-orchestrator",
       "url": "https://github.com/natan497/multi-agent-orchestrator.git",
