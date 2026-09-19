@@ -2,59 +2,64 @@
 
 ## Најкратко
 
-За вистински 24/7 cloud режим користи го делот **Cloud 24/7 режим** подолу.
-Codespaces е само привремен workspace; production cloud runtime е Fly.io.
+За бесплатен cloud режим користи го делот **Бесплатен cloud режим** подолу.
+Codespaces не е потребен за deployment.
 
-## Cloud 24/7 режим
+## Бесплатен cloud режим
 
-За да работи Hugo 24/7 без твојот лаптоп, проектот има production Docker image,
-persistent volume и автоматски GitHub deploy на Fly.io.
+Проектот има production Docker image и автоматски GitHub deploy на бесплатен
+Hugging Face Docker Space. GitHub е source of truth, а секој push на `main` го
+ажурира Space-от.
 
-Еднаш, само за initial setup:
+Еднаш направи го initial setup:
 
-1. Креирај Fly.io account.
-2. Инсталирај `flyctl` на твојот компјутер.
-3. Најави се со `fly auth login`.
-4. Од project root изврши `fly launch --no-deploy` и избери име на апликацијата.
-5. Креирај production secret:
+1. Креирај бесплатен account на https://huggingface.co.
+2. Креирај нов Space со SDK `Docker` и visibility `Private`.
+3. Креирај Hugging Face User Access Token со `write` permission.
+4. Во GitHub repo отвори **Settings -> Secrets and variables -> Actions**.
+5. Додај ги овие два repository secrets:
 
-```bash
-fly secrets set HUGO_DEVICE_TOKEN=$(openssl rand -hex 32)
+```text
+HF_TOKEN       = твојот Hugging Face write token
+HF_SPACE_ID    = твојот-username/името-на-space
 ```
 
-6. Ако користиш cloud AI provider, постави го endpoint-от како secret:
+6. Во Hugging Face Space Settings додади runtime secrets:
 
-```bash
-fly secrets set \
-  HUGO_CLOUD_AI_ENDPOINT=https://your-provider.example/v1/chat/completions \
-  HUGO_CLOUD_AI_MODEL=your-model \
-  HUGO_CLOUD_AI_API_KEY=your-secret
+```text
+HUGO_DEVICE_TOKEN
+HUGO_CLOUD_AI_ENDPOINT
+HUGO_CLOUD_AI_MODEL
+HUGO_CLOUD_AI_API_KEY
 ```
 
-7. Направи прв deploy:
+7. Направи било каква промена и push на `main`:
 
 ```bash
-fly deploy --config fly.toml
+git add .
+git commit -m "Deploy Hugo"
+git push origin main
 ```
 
-Потоа додади `FLY_API_TOKEN` во GitHub repository: **Settings -> Secrets and
-variables -> Actions**. Од тој момент секој push на `main` автоматски прави
-redeploy преку `.github/workflows/cloud-deploy.yml`.
+GitHub Actions автоматски ќе го копира проектот во твојот Space. Hugging Face
+потоа автоматски ќе го изгради Docker image-от и ќе го стартува Hugo.
 
-Memory се чува на persistent Fly volume, а source code/config се земаат од
-private GitHub repository. `fly.toml` користи `min_machines_running = 1` и не го
-гаси Hugo кога нема сообраќај.
+URL-то ќе биде:
 
-Важно: cloud runtime и cloud AI inference се две одделни работи. За AI без оптоварување
-на лаптопот, `HUGO_CLOUD_AI_ENDPOINT` мора да биде активен hosted OpenAI-compatible
-endpoint. Hugo не измислува cloud GPU сам и не ги става тајните во Git.
+`https://huggingface.co/spaces/ТВОЈ-USERNAME/ТВОЈ-SPACE`
 
-По deploy провери:
+Бесплатниот Space нема persistent disk и може автоматски да sleep-не кога нема
+сообраќај. Memory затоа треба да се третира како Git-backed state; GitHub е
+трајното место за source/config и automation history.
+
+Важно: cloud runtime и cloud AI inference се две одделни работи. За AI без
+оптоварување на лаптопот, `HUGO_CLOUD_AI_ENDPOINT` мора да биде активен hosted
+OpenAI-compatible endpoint. Бесплатниот Space сам по себе не обезбедува GPU AI.
+
+По deploy отвори го Space URL-от и провери:
 
 ```bash
-fly status
-fly logs
-curl https://YOUR_APP_NAME.fly.dev/health
+curl https://YOUR-USERNAME-YOUR-SPACE.hf.space/health
 ```
 
 Откако health ќе врати `{"status":"ok"}`, користи го cloud URL-от од frontend или

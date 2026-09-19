@@ -1,4 +1,13 @@
+---
+title: Hugo Core
+sdk: docker
+app_port: 7860
+---
+
 # Hugo Core
+
+This repository deploys to a free Hugging Face Docker Space through GitHub
+Actions. The GitHub repository remains the source of truth.
 
 Македонски водич за стартување: [README.mk.md](README.mk.md)
 
