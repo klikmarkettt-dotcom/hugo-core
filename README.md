@@ -1,5 +1,7 @@
 # Hugo Core
 
+Македонски водич за стартување: [README.mk.md](README.mk.md)
+
 ## GitHub and app connection
 
 Primary repository: https://github.com/klikmarkettt-dotcom/hugo-core
