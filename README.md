@@ -2,6 +2,9 @@
 
 Македонски водич за стартување: [README.mk.md](README.mk.md)
 
+За 24/7 cloud deployment и GitHub push -> redeploy flow, следи го делот
+**Cloud 24/7 режим** во [README.mk.md](README.mk.md).
+
 ## GitHub and app connection
 
 Primary repository: https://github.com/klikmarkettt-dotcom/hugo-core

@@ -2,6 +2,64 @@
 
 ## Најкратко
 
+За вистински 24/7 cloud режим користи го делот **Cloud 24/7 режим** подолу.
+Codespaces е само привремен workspace; production cloud runtime е Fly.io.
+
+## Cloud 24/7 режим
+
+За да работи Hugo 24/7 без твојот лаптоп, проектот има production Docker image,
+persistent volume и автоматски GitHub deploy на Fly.io.
+
+Еднаш, само за initial setup:
+
+1. Креирај Fly.io account.
+2. Инсталирај `flyctl` на твојот компјутер.
+3. Најави се со `fly auth login`.
+4. Од project root изврши `fly launch --no-deploy` и избери име на апликацијата.
+5. Креирај production secret:
+
+```bash
+fly secrets set HUGO_DEVICE_TOKEN=$(openssl rand -hex 32)
+```
+
+6. Ако користиш cloud AI provider, постави го endpoint-от како secret:
+
+```bash
+fly secrets set \
+  HUGO_CLOUD_AI_ENDPOINT=https://your-provider.example/v1/chat/completions \
+  HUGO_CLOUD_AI_MODEL=your-model \
+  HUGO_CLOUD_AI_API_KEY=your-secret
+```
+
+7. Направи прв deploy:
+
+```bash
+fly deploy --config fly.toml
+```
+
+Потоа додади `FLY_API_TOKEN` во GitHub repository: **Settings -> Secrets and
+variables -> Actions**. Од тој момент секој push на `main` автоматски прави
+redeploy преку `.github/workflows/cloud-deploy.yml`.
+
+Memory се чува на persistent Fly volume, а source code/config се земаат од
+private GitHub repository. `fly.toml` користи `min_machines_running = 1` и не го
+гаси Hugo кога нема сообраќај.
+
+Важно: cloud runtime и cloud AI inference се две одделни работи. За AI без оптоварување
+на лаптопот, `HUGO_CLOUD_AI_ENDPOINT` мора да биде активен hosted OpenAI-compatible
+endpoint. Hugo не измислува cloud GPU сам и не ги става тајните во Git.
+
+По deploy провери:
+
+```bash
+fly status
+fly logs
+curl https://YOUR_APP_NAME.fly.dev/health
+```
+
+Откако health ќе врати `{"status":"ok"}`, користи го cloud URL-от од frontend или
+client со Bearer token. Не го изложувај token-от во browser code.
+
 Hugo е приватен AI hub со memory, planning, browser, voice, automation и agents.
 GitHub го чува проектот и конфигурацијата. За вистинско извршување Hugo мора да
 работи во PC, GitHub Codespace или друг server.

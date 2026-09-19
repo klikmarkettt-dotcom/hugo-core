@@ -1,0 +1,9 @@
+.git
+.github
+.devcontainer
+.hugo
+node_modules
+*.log
+memory/.sync-lock
+README*.md
+repos

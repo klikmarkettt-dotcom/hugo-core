@@ -1,0 +1,32 @@
+app = "hugo-core-private"
+primary_region = "ams"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  HUGO_DEVICE_HOST = "0.0.0.0"
+  HUGO_DEVICE_PORT = "8787"
+  HUGO_MEMORY_AUTO_PUSH = "false"
+
+[http_service]
+  internal_port = 8787
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [[http_service.checks]]
+    interval = "15s"
+    timeout = "5s"
+    grace_period = "20s"
+    method = "GET"
+    path = "/health"
+
+[[mounts]]
+  source = "hugo_data"
+  destination = "/app/memory"
+  initial_size = "5gb"
+  processes = ["app"]
