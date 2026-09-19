@@ -151,15 +151,25 @@ Git-only.
 
 ```bash
 set -e
-if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-	ROOT="$(git rev-parse --show-toplevel)"
+REPO_URL="https://github.com/klikmarkettt-dotcom/hugo-core.git"
+is_hugo_repo() {
+	test -d "$1/.git" && git -C "$1" remote get-url origin 2>/dev/null \
+		| grep -Eq 'github\.com/klikmarkettt-dotcom/hugo-core(\.git)?$'
+}
+if is_hugo_repo "$PWD"; then
+	ROOT="$PWD"
 	git -C "$ROOT" pull --ff-only origin main
 else
 	ROOT="$PWD/hugo-core"
-	if test -d "$ROOT/.git"; then
+	if test "$(basename "$PWD")" = "hugo-core"; then
+		ROOT="$PWD-official"
+	elif test -e "$ROOT" && ! is_hugo_repo "$ROOT"; then
+		ROOT="$ROOT-official"
+	fi
+	if is_hugo_repo "$ROOT"; then
 		git -C "$ROOT" pull --ff-only origin main
 	else
-		git clone https://github.com/klikmarkettt-dotcom/hugo-core.git "$ROOT"
+		git clone "$REPO_URL" "$ROOT"
 	fi
 fi
 cd "$ROOT"
