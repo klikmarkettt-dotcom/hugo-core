@@ -147,12 +147,25 @@ Git-only.
 
 ## Стартувај сè со еден блок
 
-Од root папката на репозиториумот пушти го ова:
+Од било која папка пушти го овој единствен блок:
 
 ```bash
+set -e
+if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+	ROOT="$(git rev-parse --show-toplevel)"
+else
+	ROOT="$PWD/hugo-core"
+	if test -d "$ROOT/.git"; then
+		git -C "$ROOT" pull --ff-only origin main
+	else
+		git clone https://github.com/klikmarkettt-dotcom/hugo-core.git "$ROOT"
+	fi
+fi
+cd "$ROOT"
 test -f .env || cat .env.example > .env
-npm run start:all
+npm run capabilities
+exec npm run start:all
 ```
 
-Овој блок го креира локалниот `.env` само ако не постои, прави проверка и го
-стартува Hugo. Прекини со `Ctrl+C`.
+Овој блок го презема или ажурира репозиториумот, креира локален `.env`, ги
+проверува capability-ите и го стартува Hugo. Прекини со `Ctrl+C`.
