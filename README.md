@@ -121,3 +121,15 @@ node -e "const fs=require('fs'); for (const f of ['data/integrations.json','data
 За промена на policy-то прво провери дека не се додава нов deployment, remote
 endpoint, public API или вгнезден repository. Овој проект намерно останува
 Git-only.
+
+## Стартувај сè со еден блок
+
+Од root папката на репозиториумот пушти го ова:
+
+```bash
+test -f .env || cat .env.example > .env
+npm run first-run && npm start
+```
+
+Овој блок го креира локалниот `.env` само ако не постои, прави проверка и го
+стартува Hugo. Прекини со `Ctrl+C`.
