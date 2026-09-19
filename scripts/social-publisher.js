@@ -6,8 +6,9 @@ async function publish(platform, payload, options = {}) {
   if (!item) throw new Error(`Unsupported platform: ${platform}`);
   const token = options.token || process.env[item.token_env];
   if (!token) throw new Error(`Missing ${item.token_env}`);
-  if (!options.endpoint) throw new Error('A platform-specific publish endpoint is required');
-  return requestJson(options.endpoint, { method: 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' }, body: JSON.stringify(payload) });
+  const endpoint = options.endpoint || process.env[`${platform.toUpperCase()}_PUBLISH_ENDPOINT`] || process.env.SOCIAL_PUBLISH_ENDPOINT;
+  if (!endpoint) throw new Error('A platform-specific publish endpoint is required');
+  return requestJson(endpoint, { method: 'POST', headers: { authorization: `Bearer ${token}`, 'content-type': 'application/json' }, body: JSON.stringify(payload) });
 }
 
 module.exports = { publish };

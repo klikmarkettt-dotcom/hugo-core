@@ -10,8 +10,9 @@ async function capture(url, options = {}) { return screenshot(url, options); }
 
 async function clickText(url, text, options = {}) {
   if (!text) throw new TypeError('text is required');
-  if (!options.endpoint) throw new Error('A browser backend endpoint is required for click_text');
-  return require('./runtime-utils').requestJson(options.endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: 'click_text', url, text, options }) });
+  const endpoint = options.endpoint || process.env.HUGO_BROWSER_ENDPOINT;
+  if (!endpoint) throw new Error('A browser backend endpoint is required for click_text');
+  return require('./runtime-utils').requestJson(endpoint, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ action: 'click_text', url, text, options }) });
 }
 
 module.exports = { capture, clickText, see };

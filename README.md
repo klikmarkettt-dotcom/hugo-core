@@ -96,6 +96,29 @@ export HUGO_MEMORY_AUTO_PUSH=false
 Регистарот на integrations е намерно празен и означен со policy `git-only`.
 Локалните JSON и JSONL фајлови во `data/` и `memory/` се source of truth.
 
+## Што е навистина достапно
+
+- **AI/planning:** локален planner работи веднаш; вистинско model reasoning се
+	активира со `HUGO_LOCAL_AI_ENDPOINT` кон локален OpenAI-compatible model.
+- **Memory:** facts, recall, conversations, CRM, campaign drafts и Git sync се
+	локални и се снимаат во `memory/`.
+- **Очи:** HTTP/browser read и HTML extraction работат веднаш. Screenshots,
+	clicks и type бараат локален browser backend во `HUGO_BROWSER_ENDPOINT`.
+- **Уши/уста:** voice actions се подготвени; STT бара `HUGO_STT_ENDPOINT`, а
+	TTS бара `HUGO_TTS_ENDPOINT`.
+- **Кампании:** `campaign_create`, `campaign_list` и `campaign_update` прават
+	локални draft кампањи со template steps, публика и канали.
+- **Facebook:** draft workflow работи локално. Реално објавување бара одобрен
+	Meta endpoint и `FACEBOOK_ACCESS_TOKEN`; Hugo не измислува дека offline може
+	да објави на Facebook.
+- **CRM:** контакти и events се снимаат во `memory/crm.jsonl`.
+
+Провери ја моменталната состојба со:
+
+```bash
+npm run capabilities
+```
+
 ## Структура
 
 - `data/`: конфигурации, schemas и agent каталози.
@@ -128,7 +151,7 @@ Git-only.
 
 ```bash
 test -f .env || cat .env.example > .env
-npm run first-run && npm start
+npm run start:all
 ```
 
 Овој блок го креира локалниот `.env` само ако не постои, прави проверка и го

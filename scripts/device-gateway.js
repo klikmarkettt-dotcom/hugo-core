@@ -8,6 +8,9 @@ const { see } = require('./vision-engine');
 const { execute } = require('./automation-engine');
 const { parse } = require('./voice-commands');
 const { transcribe, synthesize } = require('./voice-engine');
+const campaign = require('./campaign-manager');
+const crm = require('./crm-manager');
+const { publish } = require('./social-publisher');
 
 function authorized(request, token) {
   const provided = request.headers.authorization || '';
@@ -26,6 +29,13 @@ async function dispatch(action, input = {}) {
   if (action === 'voice_command') return parse(input.text);
   if (action === 'voice_transcribe') return transcribe(input.audio, { ...input.options, endpoint: input.options?.endpoint || process.env.HUGO_STT_ENDPOINT, token: input.options?.token || process.env.HUGO_STT_TOKEN });
   if (action === 'voice_synthesize') return synthesize(input.text, { ...input.options, endpoint: input.options?.endpoint || process.env.HUGO_TTS_ENDPOINT, token: input.options?.token || process.env.HUGO_TTS_TOKEN });
+  if (action === 'campaign_create') return campaign.create(input);
+  if (action === 'campaign_list') return campaign.list();
+  if (action === 'campaign_update') return campaign.update(input.id, input.changes);
+  if (action === 'crm_add_contact') return crm.addContact(input);
+  if (action === 'crm_list_contacts') return crm.listContacts();
+  if (action === 'crm_add_event') return crm.addEvent(input);
+  if (action === 'social_publish') return publish(input.platform, input.payload, input.options);
   if (action === 'pc_control') {
     const endpoint = process.env.HUGO_PC_CONTROL_ENDPOINT;
     if (!endpoint) throw new Error('HUGO_PC_CONTROL_ENDPOINT is not configured');
