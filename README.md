@@ -156,19 +156,23 @@ is_hugo_repo() {
 	test -d "$1/.git" && git -C "$1" remote get-url origin 2>/dev/null \
 		| grep -Eq 'github\.com/klikmarkettt-dotcom/hugo-core(\.git)?$'
 }
-if is_hugo_repo "$PWD"; then
+is_clean_repo() {
+	test -z "$(git -C "$1" status --porcelain 2>/dev/null)"
+}
+if is_hugo_repo "$PWD" && is_clean_repo "$PWD"; then
 	ROOT="$PWD"
 	git -C "$ROOT" pull --ff-only origin main
 else
 	ROOT="$PWD/hugo-core"
-	if test "$(basename "$PWD")" = "hugo-core"; then
+	if is_hugo_repo "$PWD"; then
 		ROOT="$PWD-official"
 	elif test -e "$ROOT" && ! is_hugo_repo "$ROOT"; then
 		ROOT="$ROOT-official"
 	fi
-	if is_hugo_repo "$ROOT"; then
+	if is_hugo_repo "$ROOT" && is_clean_repo "$ROOT"; then
 		git -C "$ROOT" pull --ff-only origin main
 	else
+		if test -e "$ROOT"; then ROOT="$ROOT-fresh"; fi
 		git clone "$REPO_URL" "$ROOT"
 	fi
 fi
