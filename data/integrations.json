@@ -13,11 +13,11 @@
   ],
   "repos": [
     {
-      "name": "ollama",
-      "url": "https://github.com/ollama/ollama.git",
+      "name": "llama-cpp",
+      "url": "https://github.com/ggerganov/llama.cpp.git",
       "category": "cognition",
-      "desc": "Run local language and embedding models on the PC hub",
-      "skills": ["local-models", "chat", "embeddings"],
+      "desc": "Free local GGUF model runtime with an OpenAI-compatible server",
+      "skills": ["local-models", "chat", "embeddings", "no-api-key"],
       "path": "optional external service"
     },
     {

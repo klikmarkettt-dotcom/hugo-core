@@ -118,12 +118,30 @@ Playwright, the MCP TypeScript SDK and server catalog, LangGraph, and
 OpenTelemetry. `scripts/playwright-adapter.js` activates only when the optional
 `playwright` package is installed; the default HTTP browser path remains intact.
 
-The expanded integration layer also supports optional Ollama and Open WebUI for
+The expanded integration layer supports optional `llama.cpp` and Open WebUI for
 local cognition, Home Assistant for private device control, n8n for workflows and
 webhooks, Whisper.cpp for offline speech recognition, and Piper for local speech
-output. Run `npm run integrations:health` to get a machine-readable report of all
-configured, reachable, and unavailable adapters. Uninstalled optional services do
-not stop the core runtime.
+output. `llama.cpp` is the recommended no-API-key backend: it loads a free GGUF
+model locally and exposes an OpenAI-compatible endpoint that Hugo can call without
+cloud credentials. Run `npm run integrations:health` to get a machine-readable
+report of configured, reachable, and unavailable adapters. Uninstalled optional
+services do not stop the core runtime.
+
+### Local AI with llama.cpp
+
+Build or download `llama-server` and a compatible GGUF model from the
+[llama.cpp repository](https://github.com/ggerganov/llama.cpp). Start the local
+server with its `/v1` API enabled, then set:
+
+```bash
+export HUGO_LOCAL_AI_ENDPOINT=http://127.0.0.1:8080/v1/chat/completions
+export HUGO_LOCAL_AI_MODEL=your-gguf-model-name
+npm run integrations:health
+npm start
+```
+
+No API key is required. The model quality and speed depend on the GGUF model and
+the RAM/CPU/GPU available to the machine running the server.
 
 ## PC and phone
 
