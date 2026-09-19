@@ -19,6 +19,24 @@ When the PC hub is running and the tunnel is active, opening the app link gives 
 access to the same living system from home, work, or a phone. The endpoint is
 private, authenticated, and aligned with the hub architecture in this repository.
 
+GitHub cannot execute a permanent private assistant just because a repository page
+is opened. GitHub stores the code and memory and can run short-lived Actions jobs;
+a live Hugo gateway needs either a PC, a self-hosted runner, or a GitHub Codespace.
+Never put API keys, device tokens, or private control credentials in committed files.
+
+## GitHub-only first run with Codespaces
+
+For a browser-based first run, open the repository on GitHub, choose **Code ->
+Codespaces -> Create codespace on main**, and wait for the workspace to finish
+creating. The included `.devcontainer/devcontainer.json` installs Node.js 20,
+runs `npm run doctor`, and forwards the private gateway port `8787`.
+
+Add `HUGO_DEVICE_TOKEN` as a Codespaces secret before starting the gateway. Without
+that secret the workspace still boots safely, but the gateway remains disabled. The
+Codespace is an on-demand runtime, not permanent hosting: stop it when finished and
+do not use it for long-running private device control unless the required secrets and
+network access are configured.
+
 ## Hugo App
 
 Open the remote interface at [hugo-app](https://klikmarkettt-dotcom.github.io/hugo-app/).
