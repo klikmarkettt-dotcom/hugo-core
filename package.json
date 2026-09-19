@@ -11,6 +11,7 @@
     "memory:sync": "node scripts/memory-git-sync.js",
     "doctor": "node scripts/hugo-start.js --once --no-gateway",
     "integrations:health": "node scripts/integration-health.js",
-    "first-run": "node scripts/first-run.js"
+    "first-run": "node scripts/first-run.js",
+    "ai:setup": "node scripts/local-ai-setup.js"
   }
 }

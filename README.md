@@ -35,6 +35,12 @@ The Codespace automatically runs `npm run first-run`. This validates the core,
 loads the safe local configuration, and prints the status of optional AI, voice,
 browser, and device adapters without failing just because one is not installed.
 
+Hugo has one canonical local brain: Qwen3 8B Instruct in GGUF format, served by
+`llama.cpp`. Run `npm run ai:setup` once to download the model into `.hugo/models`
+and keep it outside Git. The model is a large upstream artifact and must not be
+committed to the repository. After installing it, start `llama-server` on port
+`8080`; Hugo will use it through the configured local endpoint.
+
 Add `HUGO_DEVICE_TOKEN` as a Codespaces secret before starting the gateway. Without
 that secret the workspace still boots safely, but the gateway remains disabled. The
 Codespace is an on-demand runtime, not permanent hosting: stop it when finished and
